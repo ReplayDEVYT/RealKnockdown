@@ -51,7 +51,6 @@ namespace RealKnockdown
 
             // creates the corpse
             PCorpse = player.CreateCorpse<Corpse>(Vector3.zero);
-            player.ApplyCorpseImpulse();
 
             if (BackendConfigAbstractClass.Config.UseBodyFastAnimator)
             {

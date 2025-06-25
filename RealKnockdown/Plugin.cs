@@ -13,6 +13,7 @@ namespace RealKnockdown
             {
                 new KillPatch().Enable();
                 new JumpPatch().Enable();
+                new ForceReinit().Enable();
             }
             catch (Exception ex)
             {

@@ -1,16 +1,10 @@
 ﻿using BepInEx;
 using EFT;
-using EFT.Communications;
-using EFT.HealthSystem;
 using EFT.Interactive;
 using EFT.InventoryLogic;
 using SPT.Reflection.Patching;
-using System;
 using System.Reflection;
-using System.Security.Policy;
-using System.Threading.Tasks;
 using UnityEngine;
-using static RootMotion.FinalIK.Grounding;
 
 namespace RealKnockdown.Patches
 {
@@ -38,7 +32,7 @@ namespace RealKnockdown.Patches
             if (HelperMethods.Ragdolled)
             {
                 Corpse comp = gameObject.AddComponent<Corpse>();
-                comp.method_17(playerProfileID, equipment, customization, true, gameWorld, side, velocity / 2, pelvis, ragdollEnabled: true, itemInHands, false, containerCollectionView, firstID);
+                comp.method_17(playerProfileID, equipment, customization, reinitBody: true, gameWorld, side, velocity / 2, pelvis, ragdollEnabled: true, itemInHands, false, containerCollectionView, firstID);
                 return comp;
             }
             else
