@@ -11,8 +11,6 @@ namespace RealKnockdown.Patches
     {
         protected override MethodBase GetTargetMethod()
         {
-            // one way methods can be patched is by targeting both their class name and the name of the method itself
-            // the example in this patch is the Jump() method in the Player class
             return AccessTools.Method(typeof(Player), nameof(Player.Jump));
         }
 
@@ -25,13 +23,7 @@ namespace RealKnockdown.Patches
 
             if (HelperMethods.Ragdolled)
             {
-                // enables all player movement and animations
-                player.ArmsAnimatorCommon.enabled = true;
-                player.BodyAnimatorCommon.enabled = true;
-
-                NotificationManagerClass.DisplayMessageNotification("Player getting up!", ENotificationDurationType.Default, ENotificationIconType.Alert, Color.green);
-
-                HelperMethods.Ragdolled = false;
+                HelperMethods.GetUp(player);
 
                 return false;
             }

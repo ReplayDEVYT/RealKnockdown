@@ -1,4 +1,5 @@
 ﻿using EFT;
+using EFT.Communications;
 using EFT.HealthSystem;
 using EFT.Interactive;
 using System;
@@ -11,6 +12,7 @@ namespace RealKnockdown
     {
 
         public static bool Ragdolled = false;
+
         public static Corpse PCorpse;
 
         public static void RestoreHealth(ActiveHealthController __instance)
@@ -61,6 +63,17 @@ namespace RealKnockdown
                 player.MovementContext.StationaryWeapon.Show();
                 player.ReleaseHand();
             }
+        }
+
+        public static void GetUp(Player player)
+        {
+            // enables all player movement and animations
+            player.ArmsAnimatorCommon.enabled = true;
+            player.BodyAnimatorCommon.enabled = true;
+
+            NotificationManagerClass.DisplayMessageNotification("Player getting up!", ENotificationDurationType.Default, ENotificationIconType.Alert, Color.green);
+
+            HelperMethods.Ragdolled = false;
         }
     }
 }
