@@ -1,4 +1,5 @@
-﻿using EFT;
+﻿using BepInEx;
+using EFT;
 using EFT.Communications;
 using EFT.HealthSystem;
 using SPT.Reflection.Patching;
@@ -17,14 +18,14 @@ namespace RealKnockdown.Patches
         [PatchPrefix]
         private static bool Prefix(ActiveHealthController __instance)
         {
+
+            Player player = __instance.Player;
+
             if (HelperMethods.Ragdolled)
             {
                 // kill player if they get shot to death while knocked
                 return true;
             }
-
-
-            Player player = __instance.Player;
 
             if (player.IsAI) { return true; }
 

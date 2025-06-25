@@ -31,26 +31,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\SPT\BepInEx\core\0Harmony.dll</HintPath>
-    </Reference>
+    <Compile Include="Patches\JumpPatch.cs" />
+    <Compile Include="Patches\KillPatch.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="HelperMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="AnimationSystem.Types">
-      <HintPath>..\References\AnimationSystem.Types.dll</HintPath>
+      <HintPath>..\..\EscapeFromTarkov_Data\Managed\AnimationSystem.Types.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\References\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>..\References\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="BepInEx.Harmony">
-      <HintPath>..\..\..\SPT\BepInEx\core\BepInEx.Harmony.dll</HintPath>
-    </Reference>
     <Reference Include="Comfort">
       <HintPath>..\References\Comfort.dll</HintPath>
-    </Reference>
-    <Reference Include="DissonanceVoip">
-      <HintPath>..\References\DissonanceVoip.dll</HintPath>
     </Reference>
     <Reference Include="spt-common">
       <HintPath>..\References\spt-common.dll</HintPath>
@@ -72,13 +70,6 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\References\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Patches\JumpPatch.cs" />
-    <Compile Include="Patches\KillPatch.cs" />
-    <Compile Include="Plugin.cs" />
-    <Compile Include="HelperMethods.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
