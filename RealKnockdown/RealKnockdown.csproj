@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Patches\JumpPatch.cs" />
-    <Compile Include="Patches\ForceReinit.cs" />
     <Compile Include="Patches\KillPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="HelperMethods.cs" />
